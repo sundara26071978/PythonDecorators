@@ -1,6 +1,12 @@
-def main():
-    print("Hello from pytondecorators!")
+def my_decorator(func):
+    def wrapper():
+        print("Before function runs")
+        func()
+        print("After function runs")
+    return wrapper
 
+@my_decorator
+def say_hello():
+    print("Hello!")
 
-if __name__ == "__main__":
-    main()
+say_hello()
